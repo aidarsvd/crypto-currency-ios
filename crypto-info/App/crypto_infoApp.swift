@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct crypto_infoApp: App {
+    let persistenceController = PersistneceController.shared
     var body: some Scene {
         WindowGroup {
             ContentView()
