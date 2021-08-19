@@ -9,22 +9,35 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewModel = MainViewModel()
-    @State var search: String = ""
     var body: some View {
         NavigationView{
             VStack(alignment: .center){
                 Text("Live Price")
                     .bold()
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                TextField("Search by word", text: $search)
-                    .padding(16)
 
+                SearchBar()
+                
+                HStack{
+                    Button(action: {
+                        withAnimation(.linear(duration: 2.0)){
+                            viewModel.fetchList()
+                        }
+                        
+                    }, label: {
+                        Image(systemName: "goforward")
+                            .foregroundColor(Color("theme_reverse"))
+                    })
+                    .rotationEffect(Angle(degrees: viewModel.isLoading ? 360 : 0), anchor: .center)
+                        
+                }
+                
                 ScrollView(showsIndicators: false){
-                    ForEach(viewModel.fetchedCoins){ coin in
+                    ForEach(viewModel.prices){ coin in
                         NavigationLink(
                             destination: CoinDetailView(),
                             label: {
-                                Text("\(coin.id)")
+                                CoinItemView(model: coin)
                             })
                     }
                 }
@@ -42,5 +55,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.light)
     }
 }
