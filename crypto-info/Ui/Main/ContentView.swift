@@ -16,7 +16,7 @@ struct ContentView: View {
                     .bold()
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
 
-                SearchBar()
+                SearchBar(searchText: $viewModel.searchText)
                 
                 HStack{
                     Button(action: {

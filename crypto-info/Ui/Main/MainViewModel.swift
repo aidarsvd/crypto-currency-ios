@@ -6,43 +6,53 @@
 //
 
 import Foundation
+import Combine
 
 class MainViewModel: ObservableObject{
     
     @Published var prices = [Crypto]()
-    @Published var fetchedCoins = [Crypto]()
+    @Published var fetched = [Crypto]()
     @Published var isLoading = false
+    
+    @Published var searchText: String = ""
+    
+    private var cancellable = Set<AnyCancellable>()
+    
+    init() {
+        applySubscribers()
+    }
     
     func fetchList() {
         isLoading = true
         Repository.shared.getList{ response in
             self.prices = response
+            self.fetched = response
             self.isLoading = false
         }
     }
     
-//    private func updateDb(){
-//        PersistneceController.shared.deleteAllData()
-//        for item in prices {
-//            PersistneceController.shared.addCoin(object: item)
-//        }
-//        PersistneceController.shared.getAllData()
-//        for item in PersistneceController.shared.coins{
-//            fetchedCoins.append(
-//                Crypto(
-//                    id: item.id!,
-//                    name: item.name!,
-//                    image: item.image!,
-//                    current_price: item.current_price,
-//                    price_change_percentage_24h: item.price_change_percentage_24h,
-//                    market_cap_rank: Int(item.market_cap_rank))
-//            )
+    private func applySubscribers(){
+        $searchText
+            .combineLatest($fetched)
+            .map{( text, startingCoins ) -> [Crypto] in
+                guard !text.isEmpty else{
+                    return startingCoins
+                }
+                let lowered = text.lowercased()
+                return startingCoins.filter{ (coin) -> Bool in
+                    return coin.name.lowercased().contains(lowered) ||
+                        coin.symbol.lowercased().contains(lowered)
+                }
+            }
+            .sink { [weak self] returned in
+                self?.prices = returned
+            }
+            .store(in: &cancellable)
+    }
+    
+//    func fetchDetail(){
+//        Repository.shared.getDetail(id: "bitcoin") { response in
+//
 //        }
 //    }
-    
-    func fetchDetail(){
-        Repository.shared.getDetail(id: "bitcoin") { response in
-            
-        }
-    }
 }
