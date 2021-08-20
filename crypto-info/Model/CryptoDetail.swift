@@ -11,4 +11,6 @@ struct CryptoDetail: Codable {
     var id: String = ""
     var name: String = ""
     var image: CoinImage = CoinImage()
+    var description: Description = Description()
+    var market_data: MarketData = MarketData()
 }

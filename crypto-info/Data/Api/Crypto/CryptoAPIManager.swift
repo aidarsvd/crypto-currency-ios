@@ -41,7 +41,7 @@ extension CryptoAPIManager.API: APICall{
             let parameters: Parameters = ["vs_currency": "usd", "order": "market_cap_desc", "per_page": "50", "price_change_percentage": "24h", "page": "1"]
             return parameters
         case .getDetail(_):
-            let parameters: Parameters = ["vs_currency": "usd", "order": "market_cap_desc", "price_change_percentage": "24h"]
+            let parameters: Parameters = ["vs_currency": "usd", "order": "market_cap_desc", "price_change_percentage": "24h", "sparkline":"true"]
             return parameters        }
     }
     
