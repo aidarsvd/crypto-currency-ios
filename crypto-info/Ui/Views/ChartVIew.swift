@@ -34,15 +34,6 @@ func getLineColor(last: Double, first: Double) -> Color{
     return priceChange > 0 ? Color.green : Color.red
 }
 
-//struct ChartVIew_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let price = [
-//            15, 10.0, 15,12
-//    ]
-//        ChartVIew(data: price, minY: price.min()!, maxY: price.max()!)
-//    }
-//}
-
 extension ChartVIew{
     private var chartView: some View{
         GeometryReader { geometry in

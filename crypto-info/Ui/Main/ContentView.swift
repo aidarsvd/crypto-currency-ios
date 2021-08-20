@@ -49,7 +49,7 @@ struct ContentView: View {
     }
     
     private func rankSort(){
-        print("Test")
+        viewModel.prices.reverse()
     }
 }
 

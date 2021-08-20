@@ -9,4 +9,7 @@ import Foundation
 
 struct Description: Codable {
     var en: String = ""
+    var text: String{
+        return en.removingHTMLOccurances
+    }
 }
