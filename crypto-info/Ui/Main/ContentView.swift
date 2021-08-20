@@ -11,45 +11,43 @@ struct ContentView: View {
 
     @ObservedObject var viewModel = MainViewModel()
     var body: some View {
-        NavigationView{
-            VStack(alignment: .center){
-                Text("Live Price")
-                    .bold()
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-
-                SearchBar(searchText: $viewModel.searchText)
-                
-                FilterView(
-                    isLoading: $viewModel.isLoading,
-                    onRankSort: {self.rankSort()},
-                    onUpdate: {self.fetchCoins()}
-                )
+        if viewModel.launchLoading {
+            ProgressView()
+                .onAppear(perform: fetchCoins)
+        }else{
+            NavigationView{
+                VStack(alignment: .center){
+                    SearchBar(searchText: $viewModel.searchText)
                     
-                
-                ScrollView(showsIndicators: false){
-                    ForEach(viewModel.prices){ coin in
-                        NavigationLink(
-                            destination: CoinDetailView(),
-                            label: {
-                                CoinItemView(model: coin)
-                            })
+                    FilterView(
+                        isLoading: $viewModel.isLoading,
+                        onRankSort: {self.rankSort()},
+                        onUpdate: {self.fetchCoins()}
+                    )
+                        
+                    
+                    ScrollView(showsIndicators: false){
+                        ForEach(viewModel.prices){ coin in
+                            NavigationLink(
+                                destination: CoinDetailView(id: coin.id),
+                                label: {
+                                    CoinItemView(model: coin)
+                                })
+                        }
                     }
                 }
-                .padding(.top, 16)
             }
+            .navigationBarHidden(true)
+            .navigationViewStyle(StackNavigationViewStyle())
         }
-        .onAppear(perform: fetchCoins)
-        .navigationBarHidden(true)
-        .navigationViewStyle(StackNavigationViewStyle())
+    
     }
-    
-    
     private func fetchCoins(){
         viewModel.fetchList()
     }
     
     private func rankSort(){
-        print("Test")
+        viewModel.prices.reverse()
     }
 }
 

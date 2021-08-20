@@ -14,6 +14,8 @@ class MainViewModel: ObservableObject{
     @Published var fetched = [Crypto]()
     @Published var isLoading = false
     
+    @Published var launchLoading = true
+    
     @Published var searchText: String = ""
     
     private var cancellable = Set<AnyCancellable>()
@@ -28,6 +30,7 @@ class MainViewModel: ObservableObject{
             self.prices = response
             self.fetched = response
             self.isLoading = false
+            self.launchLoading = false
         }
     }
     
@@ -50,9 +53,5 @@ class MainViewModel: ObservableObject{
             .store(in: &cancellable)
     }
     
-//    func fetchDetail(){
-//        Repository.shared.getDetail(id: "bitcoin") { response in
-//
-//        }
-//    }
+
 }

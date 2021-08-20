@@ -11,7 +11,7 @@ struct SearchBar: View {
     
     @Binding var searchText: String
     var body: some View {
-        HStack{
+        HStack {
             Image(systemName: "magnifyingglass")
             
             TextField("Search by word", text: $searchText)
