@@ -9,4 +9,6 @@ import Foundation
 
 struct CryptoDetail: Codable {
     var id: String = ""
+    var name: String = ""
+    var image: CoinImage = CoinImage()
 }

@@ -15,6 +15,8 @@ struct CoinDetailView: View {
             .onAppear{
                 viewModel.fetchDetail(id: self.id)
             }
+            .navigationTitle(viewModel.detailData.name)
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 

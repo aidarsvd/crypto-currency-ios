@@ -29,6 +29,7 @@
 		48F9715626CE6A6100147B8D /* CryptoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9715526CE6A6100147B8D /* CryptoDataManager.swift */; };
 		48F9715B26CE6F2600147B8D /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9715A26CE6F2600147B8D /* Repository.swift */; };
 		48FA9D1226CF933C0077E9D6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA9D1126CF933C0077E9D6 /* DetailViewModel.swift */; };
+		48FA9D1526CF96800077E9D6 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA9D1426CF96800077E9D6 /* Image.swift */; };
 		48FBC92926CE932500CE4696 /* CryptoCoin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48FBC92726CE932500CE4696 /* CryptoCoin.xcdatamodeld */; };
 		48FBC92B26CE940700CE4696 /* PersistneceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FBC92A26CE940700CE4696 /* PersistneceController.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		48F9715526CE6A6100147B8D /* CryptoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDataManager.swift; sourceTree = "<group>"; };
 		48F9715A26CE6F2600147B8D /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		48FA9D1126CF933C0077E9D6 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		48FA9D1426CF96800077E9D6 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		48FBC92826CE932500CE4696 /* CryptoCoin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CryptoCoin.xcdatamodel; sourceTree = "<group>"; };
 		48FBC92A26CE940700CE4696 /* PersistneceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistneceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +195,7 @@
 			children = (
 				48F9714F26CE63C800147B8D /* Crypto.swift */,
 				48387A4026CF872D0071C912 /* CryptoDetail.swift */,
+				48FA9D1426CF96800077E9D6 /* Image.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				48F9714A26CE5C9D00147B8D /* CryptoAPIManager.swift in Sources */,
 				48ADA2F826CF6C8D00906F5B /* FilterView.swift in Sources */,
 				48F9715B26CE6F2600147B8D /* Repository.swift in Sources */,
+				48FA9D1526CF96800077E9D6 /* Image.swift in Sources */,
 				4895709726CEADE600473501 /* SearchBar.swift in Sources */,
 				4895709926CEB36700473501 /* CoinItemView.swift in Sources */,
 				48AD0C2926CE442B0065A498 /* ContentView.swift in Sources */,
