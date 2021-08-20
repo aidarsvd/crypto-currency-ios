@@ -8,5 +8,5 @@
 import Foundation
 
 struct CryptoDetail: Codable {
-    
+    var id: String = ""
 }

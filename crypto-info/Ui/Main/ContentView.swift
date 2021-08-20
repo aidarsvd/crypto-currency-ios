@@ -29,7 +29,7 @@ struct ContentView: View {
                 ScrollView(showsIndicators: false){
                     ForEach(viewModel.prices){ coin in
                         NavigationLink(
-                            destination: CoinDetailView(),
+                            destination: CoinDetailView(id: coin.id),
                             label: {
                                 CoinItemView(model: coin)
                             })

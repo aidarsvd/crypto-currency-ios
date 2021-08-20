@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct CoinDetailView: View {
+    @ObservedObject private var viewModel = DetailViewModel()
+    var id: String
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            .onAppear{
+                viewModel.fetchDetail(id: self.id)
+            }
     }
 }
 
 struct CoinDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CoinDetailView()
+        CoinDetailView(id: "")
     }
 }

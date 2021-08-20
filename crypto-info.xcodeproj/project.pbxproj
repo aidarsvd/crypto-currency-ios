@@ -28,6 +28,7 @@
 		48F9715426CE69A200147B8D /* CryptoDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9715326CE69A200147B8D /* CryptoDataManagerProtocol.swift */; };
 		48F9715626CE6A6100147B8D /* CryptoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9715526CE6A6100147B8D /* CryptoDataManager.swift */; };
 		48F9715B26CE6F2600147B8D /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9715A26CE6F2600147B8D /* Repository.swift */; };
+		48FA9D1226CF933C0077E9D6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA9D1126CF933C0077E9D6 /* DetailViewModel.swift */; };
 		48FBC92926CE932500CE4696 /* CryptoCoin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48FBC92726CE932500CE4696 /* CryptoCoin.xcdatamodeld */; };
 		48FBC92B26CE940700CE4696 /* PersistneceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FBC92A26CE940700CE4696 /* PersistneceController.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		48F9715326CE69A200147B8D /* CryptoDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDataManagerProtocol.swift; sourceTree = "<group>"; };
 		48F9715526CE6A6100147B8D /* CryptoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDataManager.swift; sourceTree = "<group>"; };
 		48F9715A26CE6F2600147B8D /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		48FA9D1126CF933C0077E9D6 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		48FBC92826CE932500CE4696 /* CryptoCoin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CryptoCoin.xcdatamodel; sourceTree = "<group>"; };
 		48FBC92A26CE940700CE4696 /* PersistneceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistneceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +76,7 @@
 		483CDDAF26CE8FDE0047AE44 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				48FA9D1026CF932C0077E9D6 /* viewModel */,
 				483CDDB026CE900B0047AE44 /* CoinDetailView.swift */,
 			);
 			path = Detail;
@@ -150,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				48AD0C2826CE442B0065A498 /* ContentView.swift */,
-				48F9715126CE681C00147B8D /* MainViewModel.swift */,
+				48FA9D1326CF93520077E9D6 /* viewmodel */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -200,6 +203,22 @@
 				48F9715A26CE6F2600147B8D /* Repository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		48FA9D1026CF932C0077E9D6 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				48FA9D1126CF933C0077E9D6 /* DetailViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		48FA9D1326CF93520077E9D6 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				48F9715126CE681C00147B8D /* MainViewModel.swift */,
+			);
+			path = viewmodel;
 			sourceTree = "<group>";
 		};
 		48FBC92426CE925300CE4696 /* Coin Item */ = {
@@ -308,6 +327,7 @@
 				48F9715026CE63C800147B8D /* Crypto.swift in Sources */,
 				48FBC92926CE932500CE4696 /* CryptoCoin.xcdatamodeld in Sources */,
 				48F9714D26CE5E5B00147B8D /* Constant.swift in Sources */,
+				48FA9D1226CF933C0077E9D6 /* DetailViewModel.swift in Sources */,
 				48F9714A26CE5C9D00147B8D /* CryptoAPIManager.swift in Sources */,
 				48ADA2F826CF6C8D00906F5B /* FilterView.swift in Sources */,
 				48F9715B26CE6F2600147B8D /* Repository.swift in Sources */,

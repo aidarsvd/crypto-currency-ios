@@ -50,9 +50,5 @@ class MainViewModel: ObservableObject{
             .store(in: &cancellable)
     }
     
-//    func fetchDetail(){
-//        Repository.shared.getDetail(id: "bitcoin") { response in
-//
-//        }
-//    }
+
 }
