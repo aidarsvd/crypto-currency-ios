@@ -13,4 +13,5 @@ struct CryptoDetail: Codable {
     var image: CoinImage = CoinImage()
     var description: Description = Description()
     var market_data: MarketData = MarketData()
+    var market_cap_rank: Int = 0
 }
