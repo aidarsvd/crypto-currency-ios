@@ -12,7 +12,6 @@ struct FilterView: View {
     @State var isPriceSorted = false
     @State var isRankSorted = false
     @Binding var isLoading: Bool
-    var onPriceSort: () -> Void
     var onRankSort: () -> Void
     var onUpdate: () -> Void
 
@@ -20,20 +19,6 @@ struct FilterView: View {
     var body: some View {
         
         HStack{
-            
-            Button(action: {
-                self.onPriceSort()
-                isPriceSorted.toggle()
-            }, label: {
-                Text("Price")
-                    .foregroundColor(Color("theme_reverse"))
-                Image(systemName: isPriceSorted ? "arrow.down" : "arrow.up")
-                    .foregroundColor(Color("theme_reverse"))
-
-            })
-            
-            Spacer()
-            
             Button(action: {
                 isRankSorted.toggle()
                 self.onRankSort()

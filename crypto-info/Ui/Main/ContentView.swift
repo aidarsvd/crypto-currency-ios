@@ -21,7 +21,6 @@ struct ContentView: View {
                 
                 FilterView(
                     isLoading: $viewModel.isLoading,
-                    onPriceSort:{self.priceSort()},
                     onRankSort: {self.rankSort()},
                     onUpdate: {self.fetchCoins()}
                 )
@@ -44,9 +43,6 @@ struct ContentView: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
-    private func priceSort(){
-        print("Hello")
-    }
     
     private func fetchCoins(){
         viewModel.fetchList()
