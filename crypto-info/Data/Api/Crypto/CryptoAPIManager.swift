@@ -20,7 +20,7 @@ struct CryptoAPIManager: APIManagerProtocol {
         }
     }
     
-    func getDetail(id: String) -> AnyPublisher<Crypto, AFError>{
+    func getDetail(id: String) -> AnyPublisher<CryptoDetail, AFError>{
         return call(endpoint: API.getDetail(id: id)) { _ in
         }
     }

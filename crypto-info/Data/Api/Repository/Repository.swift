@@ -20,7 +20,7 @@ extension Repository: CryptoDataManagerProtocol{
         cryptoDM.getList(callback)
     }
     
-    func getDetail(id: String, callback: @escaping (Crypto) -> Void) {
+    func getDetail(id: String, callback: @escaping (CryptoDetail) -> Void) {
         cryptoDM.getDetail(id: id, callback: callback)
     }
     

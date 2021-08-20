@@ -32,9 +32,9 @@ class CryptoDataManager: CryptoDataManagerProtocol{
         }
     }
     
-    func getDetail(id: String, callback: @escaping (Crypto) -> Void) {
+    func getDetail(id: String, callback: @escaping (CryptoDetail) -> Void) {
         fetchAPIRequest(with: CryptoAPIManager.shared.getDetail(id: id), onSuccess: callback) { error in
-            callback(Crypto())
+            callback(CryptoDetail())
         }
     }
 }
