@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+
     @ObservedObject var viewModel = MainViewModel()
     var body: some View {
         NavigationView{
@@ -18,19 +19,13 @@ struct ContentView: View {
 
                 SearchBar(searchText: $viewModel.searchText)
                 
-                HStack{
-                    Button(action: {
-                        withAnimation(.linear(duration: 2.0)){
-                            viewModel.fetchList()
-                        }
-                        
-                    }, label: {
-                        Image(systemName: "goforward")
-                            .foregroundColor(Color("theme_reverse"))
-                    })
-                    .rotationEffect(Angle(degrees: viewModel.isLoading ? 360 : 0), anchor: .center)
-                        
-                }
+                FilterView(
+                    isLoading: $viewModel.isLoading,
+                    onPriceSort:{self.priceSort()},
+                    onRankSort: {self.rankSort()},
+                    onUpdate: {self.fetchCoins()}
+                )
+                    
                 
                 ScrollView(showsIndicators: false){
                     ForEach(viewModel.prices){ coin in
@@ -41,14 +36,24 @@ struct ContentView: View {
                             })
                     }
                 }
+                .padding(.top, 16)
             }
         }
         .onAppear(perform: fetchCoins)
         .navigationBarHidden(true)
+        .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    private func priceSort(){
+        print("Hello")
     }
     
     private func fetchCoins(){
         viewModel.fetchList()
+    }
+    
+    private func rankSort(){
+        print("Test")
     }
 }
 
@@ -56,5 +61,8 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .preferredColorScheme(.light)
+        
+        ContentView()
+            .preferredColorScheme(.dark)
     }
 }
